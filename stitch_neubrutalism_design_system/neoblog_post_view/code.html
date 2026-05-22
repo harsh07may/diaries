@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEOBLOG - Why Neubrutalism is the Perfect Antidote to Corporate Memphis</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700;800;900&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#695f00",
+                    "on-tertiary-fixed-variant": "#00497d",
+                    "tertiary-fixed": "#d1e4ff",
+                    "on-secondary": "#ffffff",
+                    "info": "#2196F3",
+                    "primary-container": "#ffeb3b",
+                    "secondary": "#b51925",
+                    "on-primary-container": "#746900",
+                    "surface-variant": "#e2e2e2",
+                    "on-secondary-fixed-variant": "#930015",
+                    "primary-fixed": "#f9e534",
+                    "on-primary-fixed": "#201c00",
+                    "secondary-fixed-dim": "#ffb3ae",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-container": "#eeeeee",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#dceaff",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#dbc90a",
+                    "on-surface-variant": "#4a4733",
+                    "error": "#ba1a1a",
+                    "action": "#FF5252",
+                    "surface-container-low": "#f3f3f4",
+                    "inverse-primary": "#dbc90a",
+                    "inverse-surface": "#2f3131",
+                    "ink": "#000000",
+                    "outline-variant": "#cdc7ac",
+                    "on-surface": "#1a1c1c",
+                    "on-secondary-container": "#fffbff",
+                    "tertiary-fixed-dim": "#9ecaff",
+                    "on-tertiary-container": "#006bb4",
+                    "secondary-fixed": "#ffdad7",
+                    "on-background": "#1a1c1c",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f0f1f1",
+                    "outline": "#7c7760",
+                    "background": "#f9f9f9",
+                    "on-tertiary-fixed": "#001d36",
+                    "on-primary-fixed-variant": "#4f4800",
+                    "surface-dim": "#dadada",
+                    "canvas": "#FFFFFF",
+                    "tertiary": "#0061a4",
+                    "on-primary": "#ffffff",
+                    "caution": "#FFEB3B",
+                    "surface-bright": "#f9f9f9",
+                    "on-secondary-fixed": "#410004",
+                    "surface-container-high": "#e8e8e8",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "surface": "#f9f9f9",
+                    "secondary-container": "#d8363a",
+                    "surface-tint": "#695f00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gap-sm": "12px",
+                    "margin-page": "24px",
+                    "gap-xs": "4px",
+                    "max-width": "1280px",
+                    "gap-lg": "48px",
+                    "base": "8px",
+                    "gap-md": "24px"
+            },
+            "fontFamily": {
+                    "body-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "hero-mobile": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "label-mono": [
+                            "JetBrains Mono"
+                    ],
+                    "hero": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-lg": [
+                            "Hanken Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "hero-mobile": [
+                            "40px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "headline-lg": [
+                            "36px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "label-mono": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.0",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "hero": [
+                            "64px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.03em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "500"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopNavBar -->
+<nav class="bg-primary-container dark:bg-primary w-full border-b-[3px] border-black dark:border-white shadow-[4px_4px_0px_0px_#000000] dark:shadow-[4px_4px_0px_0px_#ffffff] flex justify-between items-center px-margin-page py-4 sticky top-0 z-50">
+<div class="font-headline-lg text-headline-lg font-black tracking-tighter uppercase text-on-surface dark:text-on-background">NEOBLOG</div>
+<div class="hidden md:flex gap-gap-md">
+<a class="font-label-mono text-label-mono text-on-surface-variant dark:text-on-surface font-medium hover:text-on-surface" href="#">Latest</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant dark:text-on-surface font-medium hover:text-on-surface" href="#">Categories</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant dark:text-on-surface font-medium hover:text-on-surface" href="#">Newsletter</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant dark:text-on-surface font-medium hover:text-on-surface" href="#">About</a>
+</div>
+<div class="flex items-center gap-gap-sm">
+<button class="w-10 h-10 border-[3px] border-black flex items-center justify-center bg-surface hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all duration-100 active:translate-x-[4px] active:translate-y-[4px] shadow-[4px_4px_0px_0px_#000000]">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="px-4 py-2 border-[3px] border-black bg-action text-on-primary font-label-mono text-label-mono uppercase shadow-[4px_4px_0px_0px_#000000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all duration-100 active:translate-x-[4px] active:translate-y-[4px]">
+                Write Post
+            </button>
+</div>
+</nav>
+<main class="flex-grow w-full max-w-max-width mx-auto px-margin-page py-gap-lg flex flex-col md:flex-row gap-gap-lg">
+<!-- Main Content Area -->
+<article class="w-full md:w-8/12 flex flex-col gap-gap-lg">
+<!-- Post Header -->
+<header class="flex flex-col gap-gap-md">
+<div class="flex gap-gap-sm font-label-mono text-label-mono">
+<span class="bg-primary-container px-2 py-1 border-[3px] border-black">DESIGN</span>
+<span class="bg-tertiary-fixed px-2 py-1 border-[3px] border-black">UX</span>
+<span class="bg-surface px-2 py-1 border-[3px] border-black">Dec 12, 2024</span>
+</div>
+<h1 class="font-hero text-hero">Why Neubrutalism is the Perfect Antidote to Corporate Memphis</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Exploring the rise of structural honesty, flat visuals, and intentional friction in modern web design.</p>
+<div class="w-full h-[400px] border-[3px] border-black shadow-[5px_5px_0px_0px_#000000] overflow-hidden relative mt-gap-sm">
+<img alt="Hero Image" class="w-full h-full object-cover" data-alt="A striking digital installation art piece featuring glowing, generative geometric shapes suspended in a vast, minimalist gallery space. The room is illuminated by high-key, soft white lighting that creates a bright, modern light-mode aesthetic. The artwork relies on a sophisticated palette of deep blacks and pristine whites, punctuated by intense accents of vibrant red. The mood is serene yet technologically advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeTXaJHsbeU9nf2Fmv6lbzFz3MGAOzn0NoNoecY8Gh4OEo-qNpxE5Pa2T-IhnAFpVFtER35Rov9dmtHna3LcfpnI5Uyf56t37PBYadTLQPBDeM2RPuRxERLhD3bRcl9W2oGFYOL_kIKV8qcM3LZXmS1aXQvD5RwmH13Bl5yx7Q3-Vntux2X-m50rGk6iDi4ZxXyzwsh6MzF5GIhTcPx6heZNk_xPXB7zqLEI-DaLtQMTlb-1SB7Nj9Aj4jTCLY_7KNe5EbOyCddMLV"/>
+</div>
+</header>
+<!-- Body Content -->
+<div class="flex flex-col gap-gap-md font-body-md text-body-md">
+<p>For years, the internet has been awash in a sea of soft pastels, friendly blobs, and disproportionate limbs. Corporate Memphis, that ubiquitous flat-art illustration style, promised approachability. But as it scaled across every major tech platform, it homogenized the web into a sterile, frictionless void. Enter Neubrutalism.</p>
+<h2 class="font-headline-md text-headline-md mt-gap-md">The Rejection of Polish</h2>
+<p>Neubrutalism isn't just an aesthetic; it's a reaction. It rejects the hyper-polished, gradient-heavy, drop-shadowed perfection of modern minimalism. Instead, it embraces <span class="bg-primary-container px-1 font-bold border-b-2 border-black">structural honesty</span>.</p>
+<blockquote class="bg-caution p-gap-md border-[3px] border-black shadow-[4px_4px_0px_0px_#000000] rotate-1 my-gap-sm font-body-lg text-body-lg">
+                    "Every element is defined by thick, black strokes and hard-edged shadows that mimic physical stacking. It’s an interface that demands attention rather than receding into the background."
+                </blockquote>
+<p>Consider the <a class="text-secondary font-bold underline decoration-4 hover:bg-secondary hover:text-white transition-colors" href="#">tactile interaction</a> model. When a button is pressed in a Neubrutalist interface, it doesn't just subtly change color. It physically depresses, covering its own hard offset shadow. It's a digital interface cosplaying as a physical machine.</p>
+<h2 class="font-headline-md text-headline-md mt-gap-md">Intentional Friction</h2>
+<p>While traditional UX preaches 'frictionless' experiences, Neubrutalism introduces <span class="font-bold">intentional friction</span>. High contrast, heavy borders, and unapologetically bold colors slow the user down just enough to make them notice the interface.</p>
+<div class="w-full border-[3px] border-black shadow-[4px_4px_0px_0px_#000000] p-gap-md bg-surface-container-low my-gap-sm flex flex-col sm:flex-row gap-gap-md items-center">
+<img alt="Abstract art" class="w-full sm:w-1/2 border-[3px] border-black" data-alt="A bold, abstract composition featuring stark geometric shapes in primary colors—red, yellow, and blue—set against a stark white background. Thick black lines define the boundaries of each shape, creating a harsh, graphic aesthetic reminiscent of early 20th-century modernist art. The lighting is flat and even, emphasizing the two-dimensional nature of the design. The overall mood is energetic and confrontational, perfectly aligning with a neubrutalist visual style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1Hw_H4aKJleo68jG5_G2IHprqEu99Bh9i1g2HdVbarPIOLX6ekTByLZ4MVQ0Wdr3Y87CPeXfXHK7uiwTMhnpxMfu1IDBguRzz5iznwkWipU4GHmUKBZCp7_iNPGmbnyDPqynt_YGUjYGF6rajVW4jyn73lhc2h7xLMjsGyojGjqKPHo0wU-EtNbBW8eNb6r3OTBY9cfL8d9FaC0OInA6ky1rwn4FO6HU_TXrdVlHbs7SqU_9HnwG4rX9SLE-JzYAS5SyTRHi1tXwl"/>
+<div class="w-full sm:w-1/2">
+<h3 class="font-headline-md text-headline-md mb-gap-sm">Flat Visuals Rule</h3>
+<p>A strict ban on gradients, blurs, and organic shadows ensures the interface feels digital, honest, and unapologetically flat.</p>
+</div>
+</div>
+<p>It’s designed for Gen Z audiences, startups, and creative SaaS platforms that want to project a bold, anti-establishment, and highly functional personality.</p>
+</div>
+<!-- Share Actions (Mobile Bottom / Desktop Inline) -->
+<div class="flex items-center gap-gap-sm mt-gap-md pt-gap-md border-t-[3px] border-black">
+<span class="font-label-mono text-label-mono font-bold mr-gap-sm">SHARE:</span>
+<button class="w-10 h-10 border-[3px] border-black bg-surface flex items-center justify-center shadow-[4px_4px_0px_0px_#000000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all"><span class="material-symbols-outlined">share</span></button>
+<button class="w-10 h-10 border-[3px] border-black bg-info text-white flex items-center justify-center shadow-[4px_4px_0px_0px_#000000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all">𝕏</button>
+<button class="w-10 h-10 border-[3px] border-black bg-surface flex items-center justify-center shadow-[4px_4px_0px_0px_#000000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all"><span class="material-symbols-outlined">link</span></button>
+</div>
+</article>
+<!-- Sidebar Area -->
+<aside class="w-full md:w-4/12 flex flex-col gap-gap-lg">
+<!-- Author Card -->
+<div class="bg-action border-[3px] border-black shadow-[5px_5px_0px_0px_#000000] p-gap-md flex flex-col gap-gap-md text-white">
+<div class="flex items-center gap-gap-md">
+<div class="w-16 h-16 rounded-full border-[3px] border-black overflow-hidden bg-surface">
+<img alt="Author" class="w-full h-full object-cover" data-alt="A portrait of a male designer with short dark hair and a neat beard, wearing a plain black t-shirt. He is looking directly at the camera with a neutral, confident expression. The background is a solid, vibrant yellow color, providing high contrast and a bold graphic look. The lighting is sharp and flat, emphasizing the subject's features without creating deep shadows, consistent with a clean, modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb-KR4yI5KEDf-Rake2l_qB-fJ_uAK4CR9c0Hf5UovKKAUIqLjoEGH3RKgNQ383vqQhgZTT5P7ILFaS1MP6wECtfvg0tKfvC4domDdxjSul-R8LOqcOeEG298IMY-o0SUKXiHrE8BioxEm_fZ65i6euEcKwgLfMK_WXK2OjVpNckXoWJyy3v8pk8TownjUmPHXJXpGost8_5BXW-qwXe1CxifKoEudC1l9x7GtLGud4nuq2cZPjqX90X4gDLcv3Lch02EZflW0HEgT"/>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-white">Alex Chen</h3>
+<p class="font-label-mono text-label-mono">Senior Designer</p>
+</div>
+</div>
+<p class="font-body-md text-white">Exploring the intersection of brutalist architecture and digital product design. Always advocating for structural honesty.</p>
+<button class="w-full py-2 bg-surface text-on-surface border-[3px] border-black font-label-mono text-label-mono uppercase shadow-[4px_4px_0px_0px_#000000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all duration-100 active:translate-x-[4px] active:translate-y-[4px]">
+                    Follow Alex
+                </button>
+</div>
+<!-- Read Next (Bento Mini) -->
+<div class="flex flex-col gap-gap-md">
+<h3 class="font-headline-md text-headline-md border-b-[3px] border-black pb-2">Read Next</h3>
+<a class="block bg-surface border-[3px] border-black shadow-[4px_4px_0px_0px_#000000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all duration-100" href="#">
+<div class="p-gap-sm flex flex-col gap-2">
+<span class="font-label-mono text-label-mono bg-tertiary-fixed w-max px-1 border-black border-2">TYPOGRAPHY</span>
+<h4 class="font-headline-md text-headline-md text-lg">Why We Chose JetBrains Mono for a Consumer App</h4>
+</div>
+</a>
+<a class="block bg-primary-container border-[3px] border-black shadow-[4px_4px_0px_0px_#000000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all duration-100" href="#">
+<div class="p-gap-sm flex flex-col gap-2">
+<span class="font-label-mono text-label-mono bg-surface w-max px-1 border-black border-2">CSS</span>
+<h4 class="font-headline-md text-headline-md text-lg">Mastering the 4px Hard Offset Shadow</h4>
+</div>
+</a>
+</div>
+</aside>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-surface-dim w-full border-t-[3px] border-black dark:border-white mt-gap-lg flex flex-col md:flex-row justify-between items-center px-margin-page py-gap-md gap-md">
+<div class="font-headline-md text-headline-md font-black text-on-surface">NEOBLOG</div>
+<div class="flex flex-wrap gap-gap-md font-label-mono text-label-mono uppercase">
+<a class="text-on-surface-variant dark:text-on-surface hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-on-surface hover:text-secondary transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-on-surface hover:text-secondary transition-colors" href="#">RSS Feed</a>
+<a class="text-on-surface-variant dark:text-on-surface hover:text-secondary transition-colors" href="#">Contact</a>
+</div>
+<div class="font-label-mono text-label-mono uppercase text-secondary dark:text-secondary-fixed">
+            © 2024 NEOBLOG. BUILT FOR THE BOLD.
+        </div>
+</footer>
+</body></html>
