@@ -1,22 +1,14 @@
-"use client";
-
 import { ArticleGrid } from "@/components/ArticleGrid";
 import { HeroSection } from "@/components/HeroSection";
 import { Navigation } from "@/components/Navigation";
 import { getPosts } from "@/lib/posts";
-import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function Home() {
   const posts = getPosts();
 
   return (
-    <motion.div
-      className="min-h-screen bg-surface text-on-surface font-sans text-body-md overflow-x-hidden"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3 }}
-    >
+    <div className="min-h-screen bg-surface text-on-surface font-sans text-body-md overflow-x-hidden">
       <Navigation />
 
       <main className="w-full max-w-max-width mx-auto px-margin-page py-gap-lg flex flex-col gap-y-20">
@@ -49,6 +41,6 @@ export default function Home() {
           </Link>
         </div>
       </footer>
-    </motion.div>
+    </div>
   );
 }

@@ -1,5 +1,3 @@
-"use client";
-
 import { Monitor, Coffee, Pencil, Leaf } from "lucide-react";
 
 export function HeroSection() {

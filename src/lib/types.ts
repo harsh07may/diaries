@@ -7,15 +7,22 @@ export interface Post {
   image: string;
   excerpt: string;
   author: string;
-  content: string;
+  authorRole: string;
+  authorBio: string;
+  authorImage?: string;
   color: "yellow" | "red" | "blue";
 }
 
 export interface FrontMatter {
+  id: string;
   title: string;
   date: string;
   tags: string[];
   image: string;
   excerpt: string;
   author: string;
+  authorRole: string;
+  authorBio: string;
+  authorImage?: string;
+  color: "yellow" | "red" | "blue";
 }

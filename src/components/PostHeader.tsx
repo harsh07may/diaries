@@ -1,4 +1,5 @@
 import { Camera } from "lucide-react";
+import Image from "next/image";
 import type { Post } from "@/lib/types";
 
 const tagBgs = ["bg-primary-container", "bg-tertiary-fixed", "bg-surface"];
@@ -35,26 +36,36 @@ export function PostHeader({ post }: { post: Post }) {
         {post.excerpt}
       </p>
 
-      {/* Hero image placeholder — dot-grid + centred icon */}
-      <div className="w-full h-100 border-[3px] border-ink shadow-brutal-lg overflow-hidden relative mt-gap-sm bg-surface-container">
-        {/* Dot-grid texture */}
-        <div
-          className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, #000 1px, transparent 1px)",
-            backgroundSize: "24px 24px",
-          }}
-        />
-        {/* Coloured diagonal stripe */}
-        <div className="absolute inset-0 bg-linear-to-br from-primary-container/40 via-transparent to-tertiary-fixed/40" />
-        {/* Camera icon centred */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-          <Camera size={64} strokeWidth={1} className="text-ink opacity-30" />
-          <span className="font-mono text-label-mono text-on-surface-variant uppercase tracking-widest">
-            No image yet
-          </span>
-        </div>
+      {/* Hero image */}
+      <div className="w-full h-[400px] border-[3px] border-ink shadow-brutal-lg overflow-hidden relative mt-gap-sm bg-surface-container">
+        {post.image ? (
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            className="object-cover"
+            priority
+          />
+        ) : (
+          <>
+            {/* Dot-grid texture fallback */}
+            <div
+              className="absolute inset-0 opacity-30"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle, #000 1px, transparent 1px)",
+                backgroundSize: "24px 24px",
+              }}
+            />
+            <div className="absolute inset-0 bg-linear-to-br from-primary-container/40 via-transparent to-tertiary-fixed/40" />
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+              <Camera size={64} strokeWidth={1} className="text-ink opacity-30" />
+              <span className="font-mono text-label-mono text-on-surface-variant uppercase tracking-widest">
+                No image yet
+              </span>
+            </div>
+          </>
+        )}
       </div>
     </header>
   );
