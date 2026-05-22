@@ -107,32 +107,72 @@
 
 /* Named spacing utilities — v4 doesn't auto-generate these from --spacing-* tokens */
 @layer utilities {
-  .p-gap-xs  { padding: var(--spacing-gap-xs); }
-  .p-gap-sm  { padding: var(--spacing-gap-sm); }
-  .p-gap-md  { padding: var(--spacing-gap-md); }
-  .p-gap-lg  { padding: var(--spacing-gap-lg); }
+  .p-gap-xs {
+    padding: var(--spacing-gap-xs);
+  }
+  .p-gap-sm {
+    padding: var(--spacing-gap-sm);
+  }
+  .p-gap-md {
+    padding: var(--spacing-gap-md);
+  }
+  .p-gap-lg {
+    padding: var(--spacing-gap-lg);
+  }
 
-  .px-gap-md      { padding-inline: var(--spacing-gap-md); }
-  .px-margin-page { padding-inline: var(--spacing-margin-page); }
+  .px-gap-md {
+    padding-inline: var(--spacing-gap-md);
+  }
+  .px-margin-page {
+    padding-inline: var(--spacing-margin-page);
+  }
 
-  .py-gap-sm { padding-block: var(--spacing-gap-sm); }
-  .py-gap-md { padding-block: var(--spacing-gap-md); }
-  .py-gap-lg { padding-block: var(--spacing-gap-lg); }
+  .py-gap-sm {
+    padding-block: var(--spacing-gap-sm);
+  }
+  .py-gap-md {
+    padding-block: var(--spacing-gap-md);
+  }
+  .py-gap-lg {
+    padding-block: var(--spacing-gap-lg);
+  }
 
-  .pt-gap-md { padding-top: var(--spacing-gap-md); }
+  .pt-gap-md {
+    padding-top: var(--spacing-gap-md);
+  }
 
-  .gap-gap-xs { gap: var(--spacing-gap-xs); }
-  .gap-gap-sm { gap: var(--spacing-gap-sm); }
-  .gap-gap-md { gap: var(--spacing-gap-md); }
-  .gap-gap-lg { gap: var(--spacing-gap-lg); }
+  .gap-gap-xs {
+    gap: var(--spacing-gap-xs);
+  }
+  .gap-gap-sm {
+    gap: var(--spacing-gap-sm);
+  }
+  .gap-gap-md {
+    gap: var(--spacing-gap-md);
+  }
+  .gap-gap-lg {
+    gap: var(--spacing-gap-lg);
+  }
 
-  .mt-gap-sm { margin-top: var(--spacing-gap-sm); }
-  .mt-gap-md { margin-top: var(--spacing-gap-md); }
-  .mt-gap-lg { margin-top: var(--spacing-gap-lg); }
-  .mr-gap-sm { margin-right: var(--spacing-gap-sm); }
-  .my-gap-sm { margin-block: var(--spacing-gap-sm); }
+  .mt-gap-sm {
+    margin-top: var(--spacing-gap-sm);
+  }
+  .mt-gap-md {
+    margin-top: var(--spacing-gap-md);
+  }
+  .mt-gap-lg {
+    margin-top: var(--spacing-gap-lg);
+  }
+  .mr-gap-sm {
+    margin-right: var(--spacing-gap-sm);
+  }
+  .my-gap-sm {
+    margin-block: var(--spacing-gap-sm);
+  }
 
-  .max-w-max-width { max-width: var(--width-max-width); }
+  .max-w-max-width {
+    max-width: var(--width-max-width);
+  }
 }
 
 /* Neobrutalism utilities */
@@ -153,7 +193,9 @@
 }
 
 .brutal-hover {
-  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition:
+    transform 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 }
 
 .brutal-hover:hover {

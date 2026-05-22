@@ -1,8 +1,8 @@
-import Link from 'next/link';
-import type { Post } from '@/lib/types';
+import Link from "next/link";
+import type { Post } from "@/lib/types";
 
-const cardBgs = ['bg-tertiary-fixed', 'bg-primary-container', 'bg-surface'];
-const tagBgs = ['bg-surface', 'bg-primary-container', 'bg-tertiary-fixed'];
+const cardBgs = ["bg-tertiary-fixed", "bg-primary-container", "bg-surface"];
+const tagBgs = ["bg-surface", "bg-primary-container", "bg-tertiary-fixed"];
 
 export function RelatedPosts({ posts }: { posts: Post[] }) {
   return (

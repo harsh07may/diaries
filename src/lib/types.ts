@@ -8,7 +8,7 @@ export interface Post {
   excerpt: string;
   author: string;
   content: string;
-  color: 'yellow' | 'red' | 'blue';
+  color: "yellow" | "red" | "blue";
 }
 
 export interface FrontMatter {

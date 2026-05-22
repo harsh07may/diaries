@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { motion } from 'framer-motion';
+import Link from "next/link";
+import { motion } from "framer-motion";
 import {
   Rocket,
   Headphones,
@@ -16,25 +16,25 @@ import {
   Palette,
   Target,
   FileText,
-} from 'lucide-react';
-import type { Post } from '@/lib/types';
+} from "lucide-react";
+import type { Post } from "@/lib/types";
 
-export type CardVariant = 'feature' | 'side' | 'wide';
+export type CardVariant = "feature" | "side" | "wide";
 
 const cardColors = [
-  'bg-error-container',
-  'bg-tertiary-fixed',
-  'bg-primary-fixed',
-  'bg-surface-container-highest',
-  'bg-secondary-fixed',
+  "bg-error-container",
+  "bg-tertiary-fixed",
+  "bg-primary-fixed",
+  "bg-surface-container-highest",
+  "bg-secondary-fixed",
 ];
 
 const tagColors = [
-  'bg-primary text-on-primary',
-  'bg-info text-white',
-  'bg-caution text-ink',
-  'bg-surface text-ink',
-  'bg-secondary text-on-secondary',
+  "bg-primary text-on-primary",
+  "bg-info text-white",
+  "bg-caution text-ink",
+  "bg-surface text-ink",
+  "bg-secondary text-on-secondary",
 ];
 
 const tagIcons: Record<string, React.ElementType> = {
@@ -51,20 +51,20 @@ const tagIcons: Record<string, React.ElementType> = {
   tutorial: BookOpen,
   react: Atom,
   animation: Sparkles,
-  'framer-motion': Clapperboard,
+  "framer-motion": Clapperboard,
 };
 
 function formatDate(date: string) {
-  return new Date(date).toLocaleDateString('en-US', {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric',
+  return new Date(date).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
   });
 }
 
 export function ArticleCard({
   post,
-  variant = 'side',
+  variant = "side",
   index = 0,
 }: {
   post: Post;
@@ -75,13 +75,13 @@ export function ArticleCard({
   const tagBg = tagColors[index % tagColors.length];
   const Icon = tagIcons[post.tags[0]] ?? FileText;
 
-  if (variant === 'feature') {
+  if (variant === "feature") {
     return (
       <Link href={`/posts/${post.slug}`} className="block h-full">
         <motion.article
           className={`${bg} border-[3px] border-ink brutal-shadow brutal-hover rounded-xl p-gap-md flex flex-col justify-between min-h-100 relative overflow-hidden group cursor-pointer h-full`}
-          whileTap={{ x: 4, y: 4, boxShadow: 'none' }}
-          transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+          whileTap={{ x: 4, y: 4, boxShadow: "none" }}
+          transition={{ type: "spring", stiffness: 400, damping: 25 }}
         >
           {/* Feature badge */}
           <div className="absolute top-4 right-4 bg-white border-[3px] border-ink px-3 py-1 font-mono text-label-mono font-bold brutal-shadow rotate-3 group-hover:rotate-6 transition-transform z-10">
@@ -119,13 +119,13 @@ export function ArticleCard({
     );
   }
 
-  if (variant === 'wide') {
+  if (variant === "wide") {
     return (
       <Link href={`/posts/${post.slug}`} className="block h-full">
         <motion.article
           className={`${bg} border-[3px] border-ink brutal-shadow brutal-hover rounded-xl p-gap-md flex flex-col md:flex-row gap-gap-md cursor-pointer items-center h-full`}
-          whileTap={{ x: 4, y: 4, boxShadow: 'none' }}
-          transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+          whileTap={{ x: 4, y: 4, boxShadow: "none" }}
+          transition={{ type: "spring", stiffness: 400, damping: 25 }}
         >
           {/* Tilted icon block */}
           <div className="w-full md:w-1/3 aspect-square bg-inverse-primary border-[3px] border-ink flex items-center justify-center brutal-shadow -rotate-2 group-hover:rotate-0 transition-transform duration-300">
@@ -157,11 +157,13 @@ export function ArticleCard({
     <Link href={`/posts/${post.slug}`} className="block h-full">
       <motion.article
         className={`${bg} border-[3px] border-ink brutal-shadow brutal-hover rounded-xl p-gap-md flex flex-col justify-between min-h-62.5 cursor-pointer h-full`}
-        whileTap={{ x: 4, y: 4, boxShadow: 'none' }}
-        transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+        whileTap={{ x: 4, y: 4, boxShadow: "none" }}
+        transition={{ type: "spring", stiffness: 400, damping: 25 }}
       >
         <div className="flex justify-between items-start mb-4">
-          <span className={`${tagBg} border-2 border-ink px-2 py-1 font-mono text-[12px] uppercase font-bold`}>
+          <span
+            className={`${tagBg} border-2 border-ink px-2 py-1 font-mono text-[12px] uppercase font-bold`}
+          >
             {post.tags[0]}
           </span>
           <Icon size={32} strokeWidth={1.5} className="text-ink opacity-70" />

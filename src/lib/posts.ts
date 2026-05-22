@@ -1,15 +1,15 @@
-import { Post } from './types';
+import { Post } from "./types";
 
 const mockPosts: Post[] = [
   {
-    id: '1',
-    slug: 'building-brutalist-uis',
-    title: 'Building Brutalist UIs in a Flat World',
-    date: '2024-07-24',
-    tags: ['design', 'neobrutalism', 'ui'],
-    image: '/images/post-1.jpg',
-    excerpt: 'A deep dive into harsh borders and hard shadows.',
-    author: 'Your Name',
+    id: "1",
+    slug: "building-brutalist-uis",
+    title: "Building Brutalist UIs in a Flat World",
+    date: "2024-07-24",
+    tags: ["design", "neobrutalism", "ui"],
+    image: "/images/post-1.jpg",
+    excerpt: "A deep dive into harsh borders and hard shadows.",
+    author: "Your Name",
     content: `# Building Brutalist UIs in a Flat World
 
 Neobrutalism is more than just a design trend—it's a reaction against the sterile perfection of modern minimalism.
@@ -29,17 +29,17 @@ Start by establishing your constraints:
 3. High contrast colors
 
 The rest follows naturally.`,
-    color: 'yellow',
+    color: "yellow",
   },
   {
-    id: '2',
-    slug: 'lo-fi-beats-to-code',
-    title: 'Lo-Fi Beats to Code to: A History',
-    date: '2024-07-20',
-    tags: ['music', 'productivity', 'culture'],
-    image: '/images/post-2.jpg',
-    excerpt: 'From YouTube uploads to a billion-dollar industry.',
-    author: 'Your Name',
+    id: "2",
+    slug: "lo-fi-beats-to-code",
+    title: "Lo-Fi Beats to Code to: A History",
+    date: "2024-07-20",
+    tags: ["music", "productivity", "culture"],
+    image: "/images/post-2.jpg",
+    excerpt: "From YouTube uploads to a billion-dollar industry.",
+    author: "Your Name",
     content: `# Lo-Fi Beats to Code to: A History
 
 Lo-fi hip-hop has become the unofficial soundtrack of the modern developer.
@@ -55,17 +55,17 @@ What started as a niche genre in the mid-2010s has exploded into a cultural phen
 3. **No lyrics** — perfect for concentration
 
 Lo-fi beats are here to stay.`,
-    color: 'blue',
+    color: "blue",
   },
   {
-    id: '3',
-    slug: 'rounded-corners-destroying-web',
-    title: 'Why Rounded Corners Are Destroying the Web',
-    date: '2024-07-18',
-    tags: ['design', 'rant', 'ux'],
-    image: '/images/post-3.jpg',
-    excerpt: 'A polemic against the tyranny of border-radius.',
-    author: 'Your Name',
+    id: "3",
+    slug: "rounded-corners-destroying-web",
+    title: "Why Rounded Corners Are Destroying the Web",
+    date: "2024-07-18",
+    tags: ["design", "rant", "ux"],
+    image: "/images/post-3.jpg",
+    excerpt: "A polemic against the tyranny of border-radius.",
+    author: "Your Name",
     content: `# Why Rounded Corners Are Destroying the Web
 
 Rounded corners have become the default. It's time to push back.
@@ -82,17 +82,17 @@ Rounded corners have become the default. It's time to push back.
 Sharp corners are **honest**. They're **clear**. They're **permanent**.
 
 Embrace them.`,
-    color: 'red',
+    color: "red",
   },
   {
-    id: '4',
-    slug: 'mastering-tailwind-grid',
-    title: 'Mastering Tailwind CSS Grid Layouts',
-    date: '2024-07-15',
-    tags: ['css', 'tailwind', 'tutorial'],
-    image: '/images/post-4.jpg',
-    excerpt: 'A practical guide to asymmetric layouts.',
-    author: 'Your Name',
+    id: "4",
+    slug: "mastering-tailwind-grid",
+    title: "Mastering Tailwind CSS Grid Layouts",
+    date: "2024-07-15",
+    tags: ["css", "tailwind", "tutorial"],
+    image: "/images/post-4.jpg",
+    excerpt: "A practical guide to asymmetric layouts.",
+    author: "Your Name",
     content: `# Mastering Tailwind CSS Grid Layouts
 
 Tailwind makes complex grids achievable without custom CSS.
@@ -117,17 +117,17 @@ Tailwind makes complex grids achievable without custom CSS.
 \`\`\`
 
 That's all you need.`,
-    color: 'yellow',
+    color: "yellow",
   },
   {
-    id: '5',
-    slug: 'framer-motion-fundamentals',
-    title: 'Framer Motion: Animations That Feel Good',
-    date: '2024-07-10',
-    tags: ['react', 'animation', 'framer-motion'],
-    image: '/images/post-5.jpg',
-    excerpt: 'Smooth, delightful interactions with Framer Motion.',
-    author: 'Your Name',
+    id: "5",
+    slug: "framer-motion-fundamentals",
+    title: "Framer Motion: Animations That Feel Good",
+    date: "2024-07-10",
+    tags: ["react", "animation", "framer-motion"],
+    image: "/images/post-5.jpg",
+    excerpt: "Smooth, delightful interactions with Framer Motion.",
+    author: "Your Name",
     content: `# Framer Motion: Animations That Feel Good
 
 Animation is not decoration—it's communication.
@@ -151,13 +151,13 @@ Animation is not decoration—it's communication.
 \`\`\`
 
 Keep animations under 300ms for snappy feel.`,
-    color: 'blue',
+    color: "blue",
   },
 ];
 
 export function getPosts(): Post[] {
   return mockPosts.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
 }
 
@@ -165,11 +165,12 @@ export function getPost(slug: string): Post | undefined {
   return mockPosts.find((post) => post.slug === slug);
 }
 
-export function getRelatedPosts(currentSlug: string, limit: number = 3): Post[] {
+export function getRelatedPosts(
+  currentSlug: string,
+  limit: number = 3,
+): Post[] {
   return mockPosts
     .filter((post) => post.slug !== currentSlug)
-    .sort(
-      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-    )
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, limit);
 }

@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { Monitor, Coffee, Pencil, Leaf } from 'lucide-react';
+import { Monitor, Coffee, Pencil, Leaf } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -9,8 +9,8 @@ export function HeroSection() {
       <div
         className="absolute inset-0 opacity-20 pointer-events-none"
         style={{
-          backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)',
-          backgroundSize: '20px 20px',
+          backgroundImage: "radial-gradient(circle, #000 1px, transparent 1px)",
+          backgroundSize: "20px 20px",
         }}
       />
 
@@ -27,7 +27,9 @@ export function HeroSection() {
             <div className="w-3 h-3 rounded-full bg-action border-2 border-ink" />
             <div className="w-3 h-3 rounded-full bg-caution border-2 border-ink" />
             <div className="w-3 h-3 rounded-full bg-info border-2 border-ink" />
-            <span className="ml-2 font-mono text-[11px] text-on-surface-variant">neoblog — bash</span>
+            <span className="ml-2 font-mono text-[11px] text-on-surface-variant">
+              neoblog — bash
+            </span>
           </div>
           {/* Terminal body */}
           <div className="flex-1 bg-[#1e1e1e] p-4 font-mono text-[13px] overflow-hidden flex flex-col gap-1">
@@ -50,7 +52,11 @@ export function HeroSection() {
             <div className="absolute -right-4 top-3 w-5 h-8 border-4 border-ink border-l-0 rounded-r-xl" />
             <div className="w-full h-3 bg-[#4a2e15] border-b-4 border-ink rounded-t-sm" />
             <div className="absolute inset-0 flex items-center justify-center pt-3">
-              <Coffee size={20} strokeWidth={1.5} className="text-ink opacity-50" />
+              <Coffee
+                size={20}
+                strokeWidth={1.5}
+                className="text-ink opacity-50"
+              />
             </div>
           </div>
           {/* Steam */}
@@ -66,7 +72,11 @@ export function HeroSection() {
           <div className="w-14 h-16 bg-action border-4 border-ink brutal-shadow relative">
             <div className="w-full h-3 bg-[#4a2e15] absolute top-0 border-b-4 border-ink" />
             <div className="absolute inset-0 flex items-center justify-center pt-3">
-              <Leaf size={20} strokeWidth={1.5} className="text-white opacity-70" />
+              <Leaf
+                size={20}
+                strokeWidth={1.5}
+                className="text-white opacity-70"
+              />
             </div>
           </div>
           <div className="absolute bottom-14 left-1/2 -translate-x-1/2 w-2 h-20 bg-tertiary border-2 border-ink z-0" />
@@ -84,7 +94,11 @@ export function HeroSection() {
           <div className="w-full h-2 border-b-2 border-ink opacity-40" />
           <div className="w-full h-2 border-b-2 border-ink opacity-40" />
           <div className="w-full h-2 border-b-2 border-ink opacity-40" />
-          <Pencil size={16} strokeWidth={1.5} className="absolute top-2 right-2 text-ink opacity-60" />
+          <Pencil
+            size={16}
+            strokeWidth={1.5}
+            className="absolute top-2 right-2 text-ink opacity-60"
+          />
         </div>
       </div>
 

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import type { Post } from '@/lib/types';
-import { ArticleCard } from './ArticleCard';
+import { motion } from "framer-motion";
+import type { Post } from "@/lib/types";
+import { ArticleCard } from "./ArticleCard";
 
 const container = {
   hidden: { opacity: 0 },
@@ -14,14 +14,20 @@ const container = {
 
 const item = {
   hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { type: 'spring' as const, stiffness: 300, damping: 24 } },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring" as const, stiffness: 300, damping: 24 },
+  },
 };
 
 export function ArticleGrid({ posts }: { posts: Post[] }) {
   return (
     <section className="w-full flex flex-col gap-gap-md">
       <div className="flex items-end justify-between border-b-4 border-ink pb-4">
-        <h2 className="font-sans text-hero font-black uppercase tracking-tighter">The Feed</h2>
+        <h2 className="font-sans text-hero font-black uppercase tracking-tighter">
+          The Feed
+        </h2>
         <span className="font-mono text-label-mono font-bold bg-primary-container px-3 py-1 border-[3px] border-ink brutal-shadow hidden md:block">
           Latest Updates
         </span>
