@@ -37,7 +37,7 @@ export function PostHeader({ post }: { post: Post }) {
       </p>
 
       {/* Hero image */}
-      <div className="w-full h-[400px] border-[3px] border-ink shadow-brutal-lg overflow-hidden relative mt-gap-sm bg-surface-container">
+      <div className="w-full h-100 border-[3px] border-ink shadow-brutal-lg overflow-hidden relative mt-gap-sm bg-surface-container">
         {post.image ? (
           <Image
             src={post.image}

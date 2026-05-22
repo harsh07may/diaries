@@ -4,8 +4,8 @@ import { Navigation } from "@/components/Navigation";
 import { getPosts } from "@/lib/posts";
 import Link from "next/link";
 
-export default function Home() {
-  const posts = getPosts();
+export default async function Home() {
+  const posts = await getPosts();
 
   return (
     <div className="min-h-screen bg-surface text-on-surface font-sans text-body-md overflow-x-hidden">

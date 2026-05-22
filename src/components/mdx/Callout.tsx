@@ -20,7 +20,7 @@ export function Callout({
   return (
     <div className={`${s.bg} border-[3px] border-ink shadow-brutal my-gap-sm p-gap-md`}>
       <span
-        className={`${s.labelBg} text-canvas font-mono text-label-mono px-2 py-0.5 border-[2px] border-ink inline-block mb-3`}
+        className={`${s.labelBg} text-canvas font-mono text-label-mono px-2 py-0.5 border-2 border-ink inline-block mb-3`}
       >
         {s.label}
       </span>

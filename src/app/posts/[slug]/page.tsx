@@ -4,7 +4,6 @@ import { PostHeader } from "@/components/PostHeader";
 import { RelatedPosts } from "@/components/RelatedPosts";
 import { renderPostMDX } from "@/lib/mdx-loader";
 import { getPost, getPostSlugs, getRelatedPosts } from "@/lib/posts";
-import { useMDXComponents } from "@/mdx-components";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -17,9 +16,12 @@ export async function generateStaticParams() {
   return getPostSlugs().map((slug) => ({ slug }));
 }
 
+// Any slug not in generateStaticParams → 404 (no runtime rendering)
+export const dynamicParams = false;
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = await getPost(slug);
   if (!post) return {};
   return {
     title: `${post.title} — K-DIARY`,
@@ -34,14 +36,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function PostPage({ params }: Props) {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = await getPost(slug);
 
   if (!post) notFound();
 
-  const relatedPosts = getRelatedPosts(slug, 3);
-  const components = useMDXComponents({});
+  const relatedPosts = await getRelatedPosts(slug, 3);
 
-  const postBody = await renderPostMDX(slug, components);
+  const postBody = await renderPostMDX(slug);
   if (!postBody) notFound();
 
   return (
