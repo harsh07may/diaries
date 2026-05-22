@@ -5,15 +5,15 @@ export function Navigation() {
     <nav className="bg-primary-container w-full border-b-[3px] border-ink shadow-brutal flex justify-between items-center px-margin-page py-4 sticky top-0 z-50">
       <Link
         href="/"
-        className="font-sans text-headline-lg font-black tracking-tighter uppercase text-on-surface hover:scale-95 transition-transform"
+        className="font-sans text-headline-lg font-black tracking-tighter text-on-surface hover:scale-95 transition-transform"
       >
-        K-DIARY
+        kanaka.pages
       </Link>
 
       <div className="hidden md:flex items-center gap-gap-lg">
         <Link
           href="/"
-          className="text-on-surface font-bold underline decoration-[3px] font-label-mono text-label-mono hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-100"
+          className="text-on-surface font-bold underline decoration-[3px] font-label-mono text-label-mono hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-100"
         >
           Latest
         </Link>

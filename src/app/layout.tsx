@@ -3,7 +3,7 @@ import { hankenGrotesk, jetbrainsMono } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Neoblog - My Digital Desk",
+  title: "kanaka.pages - My Digital Desk",
   description: "A bold, interactive personal blog built with neobrutalism.",
 };
 

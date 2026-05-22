@@ -95,6 +95,7 @@ export default async function PostPage({ params }: Props) {
             authorRole={post.authorRole}
             authorBio={post.authorBio}
             authorImage={post.authorImage}
+            
           />
           <RelatedPosts posts={relatedPosts} />
         </aside>
@@ -103,7 +104,7 @@ export default async function PostPage({ params }: Props) {
       {/* Footer */}
       <footer className="bg-surface-container-highest w-full border-t-[3px] border-ink mt-gap-lg flex flex-col md:flex-row justify-between items-center px-margin-page py-gap-md gap-gap-md">
         <div className="font-sans text-headline-md font-black text-on-surface">
-          NEOBLOG
+          kanaka.pages
         </div>
         <div className="flex flex-wrap gap-gap-md font-mono text-label-mono uppercase">
           <Link
@@ -132,7 +133,7 @@ export default async function PostPage({ params }: Props) {
           </Link>
         </div>
         <div className="font-mono text-label-mono uppercase text-secondary">
-          © 2025 NEOBLOG. BUILT FOR THE BOLD.
+          © 2026 kanaka.pages. BUILT FOR THE BOLD.
         </div>
       </footer>
     </div>

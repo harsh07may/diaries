@@ -1,7 +1,7 @@
-# Project Brief & PRD: NEOBLOG
+# Project Brief & PRD: kanaka.pages
 
 ## 1. Project Overview
-**NEOBLOG** is a high-fidelity, neubrutalist-styled blog web application designed for a Gen Z audience. It prioritizes raw aesthetics, high contrast, and playful interactivity to differentiate itself from sterile, corporate design trends.
+**kanaka.pages** is a high-fidelity, neubrutalist-styled blog web application designed for a Gen Z audience. It prioritizes raw aesthetics, high contrast, and playful interactivity to differentiate itself from sterile, corporate design trends.
 
 ## 2. Target Audience
 - **Primary:** Gen Z and digital natives who appreciate "ugly-cute" aesthetics and bold visual expressions.

@@ -262,7 +262,7 @@ import { hankenGrotesk, jetbrainsMono } from './fonts';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Neoblog - My Digital Desk',
+  title: 'kanaka.pages - My Digital Desk',
   description: 'A bold, interactive personal blog built with neobrutalism.',
   viewport: 'width=device-width, initial-scale=1',
 };
@@ -563,7 +563,7 @@ export function Navigation() {
     <nav className="w-full bg-primary-container brutal-border brutal-shadow sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="font-bold text-2xl text-ink hover:no-underline">
-          Neoblog
+          kanaka.pages
         </Link>
         
         <div className="flex gap-gap-lg items-center">

@@ -16,7 +16,7 @@ No test suite is configured yet.
 
 ## Architecture
 
-This is a **Next.js 16 App Router** personal blog project ("Neoblog") with a neobrutalism design aesthetic.
+This is a **Next.js 16 App Router** personal blog project ("kanaka.pages") with a neobrutalism design aesthetic.
 
 - `src/app/` — App Router pages and layouts. `layout.tsx` applies global fonts and `globals.css`. `page.tsx` is the home page.
 - `src/lib/posts.ts` — Data layer. Currently uses an in-memory `mockPosts` array. Exports `getPosts()`, `getPost(slug)`, and `getRelatedPosts(slug, limit)`. This is the layer to replace when adding a real CMS or markdown file system.

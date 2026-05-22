@@ -1,4 +1,4 @@
-import { Monitor, Coffee, Pencil, Leaf } from "lucide-react";
+import { Coffee, Leaf, Monitor, Pencil } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -26,7 +26,7 @@ export function HeroSection() {
             <div className="w-3 h-3 rounded-full bg-caution border-2 border-ink" />
             <div className="w-3 h-3 rounded-full bg-info border-2 border-ink" />
             <span className="ml-2 font-mono text-[11px] text-on-surface-variant">
-              neoblog — bash
+              kanaka.pages — bash
             </span>
           </div>
           {/* Terminal body */}
