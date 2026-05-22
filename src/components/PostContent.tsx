@@ -2,64 +2,102 @@
 
 import React from 'react';
 
+function renderInline(text: string): React.ReactNode {
+  const parts = text.split(/(\*\*[^*]+\*\*|`[^`]+`)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={i} className="font-black text-ink">{part.slice(2, -2)}</strong>;
+    }
+    if (part.startsWith('`') && part.endsWith('`')) {
+      return (
+        <code key={i} className="bg-surface-container border border-outline-variant px-1.5 py-0.5 font-mono text-[13px] rounded">
+          {part.slice(1, -1)}
+        </code>
+      );
+    }
+    return part;
+  });
+}
+
 export function PostContent({ content }: { content: string }) {
-  // Simple markdown-like rendering (will be replaced with proper MDX later)
-  const renderContent = (text: string) => {
-    const lines = text.split('\n');
-    const elements: React.ReactNode[] = [];
+  const lines = content.split('\n');
+  const elements: React.ReactNode[] = [];
+  let listBuffer: string[] = [];
+  let listType: 'ul' | 'ol' | null = null;
 
-    lines.forEach((line, idx) => {
-      if (line.startsWith('# ')) {
-        elements.push(
-          <h1 key={idx} className="text-4xl font-black text-ink mt-gap-lg mb-4">
-            {line.replace('# ', '')}
-          </h1>
-        );
-      } else if (line.startsWith('## ')) {
-        elements.push(
-          <h2 key={idx} className="text-2xl font-bold text-ink mt-gap-lg mb-3">
-            {line.replace('## ', '')}
-          </h2>
-        );
-      } else if (line.startsWith('### ')) {
-        elements.push(
-          <h3 key={idx} className="text-xl font-bold text-ink mt-6 mb-2">
-            {line.replace('### ', '')}
-          </h3>
-        );
-      } else if (line.startsWith('- ')) {
-        elements.push(
-          <li key={idx} className="ml-6 text-ink">
-            {line.replace('- ', '')}
-          </li>
-        );
-      } else if (line.startsWith('1. ')) {
-        elements.push(
-          <li key={idx} className="ml-6 text-ink list-decimal">
-            {line.replace(/\d+\. /, '')}
-          </li>
-        );
-      } else if (line.startsWith('```')) {
-        // Skip code fence markers
-      } else if (line.trim()) {
-        elements.push(
-          <p key={idx} className="text-ink mb-4 leading-relaxed">
-            {line}
-          </p>
-        );
-      } else {
-        elements.push(<div key={idx} className="mb-4" />);
-      }
-    });
+  function flushList() {
+    if (listBuffer.length === 0) return;
+    const Tag = listType === 'ol' ? 'ol' : 'ul';
+    const cls = listType === 'ol' ? 'list-decimal' : 'list-disc';
+    elements.push(
+      <Tag key={`list-${elements.length}`} className={`${cls} ml-6 space-y-1 mb-4 font-sans text-body-md text-ink`}>
+        {listBuffer.map((item, i) => (
+          <li key={i}>{renderInline(item)}</li>
+        ))}
+      </Tag>
+    );
+    listBuffer = [];
+    listType = null;
+  }
 
-    return elements;
-  };
+  lines.forEach((line, idx) => {
+    if (line.startsWith('# ')) {
+      flushList();
+      elements.push(
+        <h1 key={idx} className="font-sans text-headline-lg font-black text-ink mt-gap-lg mb-4 leading-tight">
+          {renderInline(line.slice(2))}
+        </h1>
+      );
+    } else if (line.startsWith('## ')) {
+      flushList();
+      elements.push(
+        <h2 key={idx} className="font-sans text-headline-md font-black text-ink mt-gap-lg mb-3 border-b-2 border-outline-variant pb-2">
+          {renderInline(line.slice(3))}
+        </h2>
+      );
+    } else if (line.startsWith('### ')) {
+      flushList();
+      elements.push(
+        <h3 key={idx} className="font-sans text-[20px] font-bold text-ink mt-6 mb-2">
+          {renderInline(line.slice(4))}
+        </h3>
+      );
+    } else if (line.startsWith('> ')) {
+      flushList();
+      elements.push(
+        <blockquote
+          key={idx}
+          className="bg-caution p-gap-md border-[3px] border-ink shadow-brutal rotate-[0.5deg] my-gap-sm font-sans text-body-lg italic"
+        >
+          {renderInline(line.slice(2))}
+        </blockquote>
+      );
+    } else if (line.startsWith('- ')) {
+      if (listType !== 'ul') { flushList(); listType = 'ul'; }
+      listBuffer.push(line.slice(2));
+    } else if (/^\d+\. /.test(line)) {
+      if (listType !== 'ol') { flushList(); listType = 'ol'; }
+      listBuffer.push(line.replace(/^\d+\. /, ''));
+    } else if (line.startsWith('```')) {
+      flushList();
+    } else if (line.trim()) {
+      flushList();
+      elements.push(
+        <p key={idx} className="font-sans text-body-md text-ink mb-4 leading-relaxed">
+          {renderInline(line)}
+        </p>
+      );
+    } else {
+      flushList();
+      elements.push(<div key={idx} className="mb-2" />);
+    }
+  });
+
+  flushList();
 
   return (
-    <div className="max-w-3xl mx-auto px-6 py-gap-lg">
-      <article className="prose prose-sm text-ink">
-        {renderContent(content)}
-      </article>
+    <div className="flex flex-col gap-1">
+      {elements}
     </div>
   );
 }
