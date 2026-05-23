@@ -5,12 +5,17 @@ import { MapPin } from "lucide-react";
 import Image from "next/image";
 import { NotebookModal } from "./NotebookModal";
 import { motion } from "framer-motion";
+import type { HeroData } from "@/lib/hero";
 
-export function HeroSection() {
+interface HeroSectionProps {
+  heroData: HeroData;
+}
+
+export function HeroSection({ heroData }: HeroSectionProps) {
   const [activeModal, setActiveModal] = useState<string | null>(null);
 
   return (
-    <motion.section 
+    <motion.section
       initial="hidden"
       animate="show"
       variants={{
@@ -23,20 +28,20 @@ export function HeroSection() {
       className="w-full flex flex-col items-center gap-16 mt-4 mb-12"
     >
       {/* Main Illustration Container */}
-      <motion.div 
+      <motion.div
         variants={{
           hidden: { opacity: 0, y: 20 },
           show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
         }}
         className="relative w-full max-w-5xl aspect-[4/3] md:aspect-[16/10] overflow-visible"
       >
-        
+
         {/* === BACKGROUND LAYER === */}
         {/* Wall background is removed to let the global neo-brutalism dotted pattern show through */}
 
         {/* === WALL ITEMS === */}
         {/* Whiteboard with AI Image */}
-        <div 
+        <div
           onClick={() => setActiveModal("brain-dump")}
           className="group absolute top-[4%] left-[2%] w-[48%] h-[46%] z-10 transition-transform duration-300 ease-out hover:scale-[1.03] hover:-rotate-1 cursor-pointer"
         >
@@ -51,9 +56,9 @@ export function HeroSection() {
           </div>
 
           <div className="relative w-full h-full">
-            <Image 
-              src="/hero/kanaka-whiteboard.png" 
-              alt="Whiteboard" 
+            <Image
+              src="/hero/kanaka-whiteboard.png"
+              alt="Whiteboard"
               fill
               className="object-contain drop-shadow-[4px_4px_0_rgba(0,0,0,1)]"
             />
@@ -61,7 +66,7 @@ export function HeroSection() {
         </div>
 
         {/* Window/Painting with AI Image */}
-        <div 
+        <div
           onClick={() => setActiveModal("where-i-live")}
           className="group absolute top-[8%] right-[5%] w-[42%] h-[45%] z-10 transition-transform duration-300 ease-out hover:scale-[1.03] hover:rotate-1 cursor-pointer"
         >
@@ -77,9 +82,9 @@ export function HeroSection() {
 
           <div className="w-full h-full border-[8px] border-[#2d3748] brutal-shadow overflow-hidden flex flex-col bg-white">
             <div className="relative w-full h-full">
-              <Image 
-                src="/hero/kanaka-goa-scenery.png" 
-                alt="Goa Scenery" 
+              <Image
+                src="/hero/kanaka-goa-scenery.png"
+                alt="Goa Scenery"
                 fill
                 className="object-cover"
               />
@@ -94,10 +99,10 @@ export function HeroSection() {
             <polygon points="6,25 0,75 0,100 6,50" fill="#eab308" stroke="#000" strokeWidth="4" vectorEffect="non-scaling-stroke" strokeLinejoin="round" />
             {/* Right Side Depth */}
             <polygon points="94,25 100,75 100,100 94,50" fill="#eab308" stroke="#000" strokeWidth="4" vectorEffect="non-scaling-stroke" strokeLinejoin="round" />
-            
+
             {/* Top Surface */}
             <polygon points="6,25 94,25 100,75 0,75" fill="#fef08a" stroke="#000" strokeWidth="4" vectorEffect="non-scaling-stroke" strokeLinejoin="round" />
-            
+
             {/* Top Surface Texture (Wood Grain / Planks) */}
             <path d="
               M 12 35 L 45 35
@@ -113,7 +118,7 @@ export function HeroSection() {
 
             {/* Front Lip */}
             <polygon points="0,75 100,75 100,100 0,100" fill="#fde047" stroke="#000" strokeWidth="4" vectorEffect="non-scaling-stroke" strokeLinejoin="round" />
-            
+
             {/* Front Lip Texture */}
             <path d="
               M 5 85 L 35 85
@@ -125,7 +130,7 @@ export function HeroSection() {
         </div>
 
         {/* === CHARACTER LAYER with AI Image === */}
-        <div 
+        <div
           onClick={() => setActiveModal("character")}
           className="group absolute bottom-[2%] left-[52%] -translate-x-1/2 w-[55%] h-[75%] z-20 transition-transform duration-300 ease-out hover:scale-105 hover:-rotate-1 cursor-pointer flex flex-col items-center justify-end"
         >
@@ -140,9 +145,9 @@ export function HeroSection() {
           </div>
 
           <div className="relative w-full h-full">
-            <Image 
-              src="/hero/kanaka-character.png" 
-              alt="Kanaka Character" 
+            <Image
+              src="/hero/kanaka-character.png"
+              alt="Kanaka Character"
               fill
               className="object-contain object-bottom"
             />
@@ -150,9 +155,9 @@ export function HeroSection() {
         </div>
 
         {/* === FOREGROUND / DESK ITEMS === */}
-        
+
         {/* Desk Items (Books, Camera, Ink, Coffee) with AI Image */}
-        <div 
+        <div
           onClick={() => setActiveModal("books")}
           className="group absolute bottom-[5%] left-[5%] w-[35%] h-[35%] z-40 transition-transform duration-300 ease-out hover:scale-105 hover:rotate-2 cursor-pointer"
         >
@@ -167,9 +172,9 @@ export function HeroSection() {
           </div>
 
            <div className="relative w-full h-full">
-            <Image 
-              src="/hero/kanaka-desk-items.png" 
-              alt="Desk Items" 
+            <Image
+              src="/hero/kanaka-desk-items.png"
+              alt="Desk Items"
               fill
               className="object-contain object-bottom"
             />
@@ -177,7 +182,7 @@ export function HeroSection() {
         </div>
 
         {/* Laptop with AI Image */}
-        <div 
+        <div
           onClick={() => setActiveModal("contacts")}
           className="group absolute bottom-[5%] left-[42%] w-[38%] h-[42%] z-40 transition-transform duration-300 ease-out hover:scale-[1.04] hover:-rotate-1 cursor-pointer"
         >
@@ -192,9 +197,9 @@ export function HeroSection() {
           </div>
 
           <div className="relative w-full h-full">
-            <Image 
-              src="/hero/kanaka-laptop.png" 
-              alt="Laptop" 
+            <Image
+              src="/hero/kanaka-laptop.png"
+              alt="Laptop"
               fill
               className="object-contain object-bottom"
             />
@@ -202,7 +207,7 @@ export function HeroSection() {
         </div>
 
         {/* Map */}
-        <div 
+        <div
           onClick={() => setActiveModal("places-to-go")}
           className="group absolute -bottom-[6%] right-[4%] w-[22%] h-[20%] z-50 transition-transform duration-300 ease-out hover:scale-105 hover:-rotate-2 cursor-pointer rotate-12"
         >
@@ -226,7 +231,7 @@ export function HeroSection() {
             <div className="w-1/3 h-full bg-[#b2ebf2]" />
 
             <MapPin className="absolute top-2 right-4 text-red-500 fill-red-500" size={20} />
-            
+
             <div className="absolute top-4 left-2 w-6 h-1 border-b-2 border-dashed border-ink rotate-45" />
             <div className="absolute top-6 left-5 w-4 h-1 border-b-2 border-dashed border-ink -rotate-12" />
           </div>
@@ -234,7 +239,7 @@ export function HeroSection() {
       </motion.div>
 
       {/* === BIO SECTION === */}
-      <motion.div 
+      <motion.div
         variants={{
           hidden: { opacity: 0, y: 20 },
           show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
@@ -260,11 +265,12 @@ export function HeroSection() {
            </div>
          </div>
       </motion.div>
-     
-      <NotebookModal 
-        isOpen={!!activeModal} 
-        onClose={() => setActiveModal(null)} 
-        contentId={activeModal as any} 
+
+      <NotebookModal
+        isOpen={!!activeModal}
+        onClose={() => setActiveModal(null)}
+        contentId={activeModal as any}
+        heroData={heroData}
       />
     </motion.section>
   );
