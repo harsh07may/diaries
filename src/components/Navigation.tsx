@@ -1,6 +1,10 @@
+import { cookies } from "next/headers";
 import Link from "next/link";
 
-export function Navigation() {
+export async function Navigation() {
+  const jar = await cookies();
+  const isAuthenticated = jar.has("keystatic-gh-access-token");
+
   return (
     <nav className="bg-primary-container w-full border-b-[3px] border-ink shadow-brutal flex justify-between items-center px-margin-page py-4 sticky top-0 z-50">
       <Link
@@ -41,9 +45,14 @@ export function Navigation() {
           />
           <span className="text-ink text-sm ml-1">🔍</span>
         </div> */}
-        <button className="bg-action text-white font-mono text-label-mono uppercase font-bold border-[3px] border-ink px-4 py-2 shadow-brutal hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none active:translate-x-1 active:translate-y-1 transition-all duration-100 whitespace-nowrap">
-          Write Post
-        </button>
+        {isAuthenticated && (
+          <Link
+            href="/keystatic"
+            className="bg-action text-white font-mono text-label-mono uppercase font-bold border-[3px] border-ink px-4 py-2 shadow-brutal hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none active:translate-x-1 active:translate-y-1 transition-all duration-100 whitespace-nowrap"
+          >
+            Write Post
+          </Link>
+        )}
       </div>
     </nav>
   );

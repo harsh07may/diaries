@@ -35,9 +35,10 @@ export default config({
           label: "Tags",
           itemLabel: (props) => props.value ?? "Tag",
         }),
-        image: fields.text({
-          label: "Cover Image Path",
-          description: "Relative path to image in /public, e.g. /images/post-1.jpg",
+        image: fields.image({
+          label: "Cover Image",
+          directory: "public/images",
+          publicPath: "/images/",
         }),
         author: fields.text({ label: "Author Name" }),
         authorRole: fields.text({ label: "Author Role" }),
