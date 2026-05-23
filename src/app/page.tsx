@@ -2,13 +2,14 @@ import { ArticleGrid } from "@/components/ArticleGrid";
 import { HeroSection } from "@/components/HeroSection";
 import { Navigation } from "@/components/Navigation";
 import { getPosts } from "@/lib/posts";
+import { getHeroData } from "@/lib/hero";
 import Link from "next/link";
 import { Footer } from "@/components/Footer";
 
 import { BackgroundShapes } from "@/components/BackgroundShapes";
 
 export default async function Home() {
-  const posts = await getPosts();
+  const [posts, heroData] = await Promise.all([getPosts(), getHeroData()]);
 
   return (
     <div 
@@ -22,7 +23,7 @@ export default async function Home() {
       <Navigation />
 
       <main className="w-full max-w-max-width mx-auto px-margin-page py-gap-lg flex flex-col gap-y-20 relative z-10">
-        <HeroSection />
+        <HeroSection heroData={heroData} />
         <ArticleGrid posts={posts} />
       </main>
 
