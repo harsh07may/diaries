@@ -1,6 +1,8 @@
 import type { MDXComponents } from "mdx/types";
 import Image from "next/image";
 import Link from "next/link";
+import { Callout } from "@/components/mdx/Callout";
+import { ImageGrid } from "@/components/mdx/ImageGrid";
 
 /**
  * Plain components map for next-mdx-remote.
@@ -93,6 +95,10 @@ export const mdxComponents: MDXComponents = {
 
   // ─── Horizontal Rule ─────────────────────────────────────────────────────
   hr: () => <hr className="border-t-[3px] border-ink my-gap-md" />,
+
+  // ─── Custom MDX components ───────────────────────────────────────────────
+  Callout,
+  ImageGrid,
 
   // ─── Images ──────────────────────────────────────────────────────────────
   // Uses fill + aspect-ratio wrapper instead of fixed dimensions so images

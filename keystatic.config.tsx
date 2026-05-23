@@ -1,9 +1,14 @@
 import { collection, config, fields } from "@keystatic/core";
+import { wrapper } from "@keystatic/core/content-components";
 
 export default config({
-  storage: {
-    kind: "local",
-  },
+  storage:
+    process.env.NODE_ENV === "production"
+      ? {
+          kind: "github",
+          repo: { owner: "harsh07may", name: "diaries" },
+        }
+      : { kind: "local" },
 
   collections: {
     posts: collection({
@@ -56,6 +61,34 @@ export default config({
             image: true,
             divider: true,
             codeBlock: true,
+          },
+          components: {
+            Callout: wrapper({
+              label: "Callout",
+              schema: {
+                variant: fields.select({
+                  label: "Variant",
+                  options: [
+                    { label: "Note", value: "note" },
+                    { label: "Tip", value: "tip" },
+                    { label: "Warning", value: "warning" },
+                    { label: "Caution", value: "caution" },
+                  ],
+                  defaultValue: "note",
+                }),
+              },
+            }),
+            ImageGrid: wrapper({
+              label: "Image Grid",
+              schema: {
+                src: fields.text({
+                  label: "Image Path",
+                  description: "e.g. /images/example.jpg",
+                }),
+                alt: fields.text({ label: "Alt Text" }),
+                title: fields.text({ label: "Title (optional)" }),
+              },
+            }),
           },
         }),
       },
