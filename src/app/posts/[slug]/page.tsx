@@ -7,6 +7,8 @@ import { getPost, getPostSlugs, getRelatedPosts } from "@/lib/posts";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Footer } from "@/components/Footer";
+import { ShareButtons } from "@/components/ShareButtons";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -23,13 +25,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = await getPost(slug);
   if (!post) return {};
+  
+  const url = `https://kanaka-pages.vercel.app/posts/${slug}`;
+  
   return {
-    title: `${post.title} — K-DIARY`,
+    title: post.title,
     description: post.excerpt,
+    alternates: {
+      canonical: url,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      images: post.image ? [{ url: post.image }] : [],
+      url: url,
+      type: "article",
+      publishedTime: post.date,
+      authors: ["Kanaka"],
+      images: post.image ? [{ url: post.image, width: 1200, height: 630, alt: post.title }] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: post.image ? [post.image] : [],
     },
   };
 }
@@ -60,32 +78,7 @@ export default async function PostPage({ params }: Props) {
           </div>
 
           {/* Share bar */}
-          <div className="flex items-center gap-gap-sm pt-gap-md border-t-[3px] border-ink">
-            <span className="font-mono text-label-mono font-bold mr-gap-sm">
-              SHARE:
-            </span>
-            <button
-              type="button"
-              aria-label="Share"
-              className="w-10 h-10 border-[3px] border-ink bg-surface flex items-center justify-center shadow-brutal hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none active:translate-x-1 active:translate-y-1 transition-all"
-            >
-              ↗
-            </button>
-            <button
-              type="button"
-              aria-label="Share on X"
-              className="w-10 h-10 border-[3px] border-ink bg-info text-white flex items-center justify-center shadow-brutal hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none active:translate-x-1 active:translate-y-1 transition-all"
-            >
-              𝕏
-            </button>
-            <button
-              type="button"
-              aria-label="Copy link"
-              className="w-10 h-10 border-[3px] border-ink bg-surface flex items-center justify-center shadow-brutal hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none active:translate-x-1 active:translate-y-1 transition-all"
-            >
-              🔗
-            </button>
-          </div>
+          <ShareButtons url={`https://kanaka.pages/posts/${post.slug}`} title={post.title} />
         </article>
 
         {/* ── Sidebar ── */}
@@ -102,40 +95,7 @@ export default async function PostPage({ params }: Props) {
       </main>
 
       {/* Footer */}
-      <footer className="bg-surface-container-highest w-full border-t-[3px] border-ink mt-gap-lg flex flex-col md:flex-row justify-between items-center px-margin-page py-gap-md gap-gap-md">
-        <div className="font-sans text-headline-md font-black text-on-surface">
-          kanaka.pages
-        </div>
-        <div className="flex flex-wrap gap-gap-md font-mono text-label-mono uppercase">
-          <Link
-            href="#"
-            className="text-on-surface-variant hover:text-secondary transition-colors"
-          >
-            Privacy Policy
-          </Link>
-          <Link
-            href="#"
-            className="text-on-surface-variant hover:text-secondary transition-colors"
-          >
-            Terms of Service
-          </Link>
-          <Link
-            href="#"
-            className="text-on-surface-variant hover:text-secondary transition-colors"
-          >
-            RSS Feed
-          </Link>
-          <Link
-            href="#"
-            className="text-on-surface-variant hover:text-secondary transition-colors"
-          >
-            Contact
-          </Link>
-        </div>
-        <div className="font-mono text-label-mono uppercase text-secondary">
-          © 2026 kanaka.pages. BUILT FOR THE BOLD.
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

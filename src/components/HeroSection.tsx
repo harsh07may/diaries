@@ -1,11 +1,35 @@
+"use client";
+
+import { useState } from "react";
 import { MapPin } from "lucide-react";
 import Image from "next/image";
+import { NotebookModal } from "./NotebookModal";
+import { motion } from "framer-motion";
 
 export function HeroSection() {
+  const [activeModal, setActiveModal] = useState<string | null>(null);
+
   return (
-    <section className="w-full flex flex-col items-center gap-16 mt-4 mb-12">
+    <motion.section 
+      initial="hidden"
+      animate="show"
+      variants={{
+        hidden: { opacity: 0 },
+        show: {
+          opacity: 1,
+          transition: { staggerChildren: 0.15 }
+        }
+      }}
+      className="w-full flex flex-col items-center gap-16 mt-4 mb-12"
+    >
       {/* Main Illustration Container */}
-      <div className="relative w-full max-w-5xl aspect-[4/3] md:aspect-[16/10] overflow-visible">
+      <motion.div 
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
+        }}
+        className="relative w-full max-w-5xl aspect-[4/3] md:aspect-[16/10] overflow-visible"
+      >
         
         {/* === BACKGROUND LAYER === */}
         {/* Wall background is removed to let the global neo-brutalism dotted pattern show through */}
@@ -13,6 +37,7 @@ export function HeroSection() {
         {/* === WALL ITEMS === */}
         {/* Whiteboard with AI Image */}
         <div 
+          onClick={() => setActiveModal("brain-dump")}
           className="group absolute top-[4%] left-[2%] w-[48%] h-[46%] z-10 transition-transform duration-300 ease-out hover:scale-[1.03] hover:-rotate-1 cursor-pointer"
         >
           {/* Tooltip */}
@@ -37,6 +62,7 @@ export function HeroSection() {
 
         {/* Window/Painting with AI Image */}
         <div 
+          onClick={() => setActiveModal("where-i-live")}
           className="group absolute top-[8%] right-[5%] w-[42%] h-[45%] z-10 transition-transform duration-300 ease-out hover:scale-[1.03] hover:rotate-1 cursor-pointer"
         >
           {/* Tooltip */}
@@ -62,11 +88,45 @@ export function HeroSection() {
         </div>
 
         {/* === DESK LAYER === */}
-        <div className="absolute bottom-[20%] -left-[2%] w-[104%] h-3 bg-[#1e4658] border-y-4 border-ink z-10" />
-        <div className="absolute bottom-0 -left-[2%] w-[104%] h-[20%] bg-[#22576b] border-t-2 border-ink z-20" />
+        <div className="absolute bottom-[2%] left-[1%] w-[98%] h-[25%] z-10 pointer-events-none">
+          <svg className="w-full h-full drop-shadow-[0_12px_0_rgba(0,0,0,1)]" preserveAspectRatio="none" viewBox="0 0 100 100">
+            {/* Left Side Depth */}
+            <polygon points="6,25 0,75 0,100 6,50" fill="#eab308" stroke="#000" strokeWidth="4" vectorEffect="non-scaling-stroke" strokeLinejoin="round" />
+            {/* Right Side Depth */}
+            <polygon points="94,25 100,75 100,100 94,50" fill="#eab308" stroke="#000" strokeWidth="4" vectorEffect="non-scaling-stroke" strokeLinejoin="round" />
+            
+            {/* Top Surface */}
+            <polygon points="6,25 94,25 100,75 0,75" fill="#fef08a" stroke="#000" strokeWidth="4" vectorEffect="non-scaling-stroke" strokeLinejoin="round" />
+            
+            {/* Top Surface Texture (Wood Grain / Planks) */}
+            <path d="
+              M 12 35 L 45 35
+              M 55 35 L 88 35
+              M 8 45 L 25 45
+              M 35 45 L 75 45
+              M 85 45 L 92 45
+              M 5 55 L 15 55
+              M 25 55 L 85 55
+              M 3 65 L 60 65
+              M 70 65 L 97 65
+            " stroke="#d9b876" strokeWidth="3" vectorEffect="non-scaling-stroke" strokeLinecap="round" opacity="0.7" />
+
+            {/* Front Lip */}
+            <polygon points="0,75 100,75 100,100 0,100" fill="#fde047" stroke="#000" strokeWidth="4" vectorEffect="non-scaling-stroke" strokeLinejoin="round" />
+            
+            {/* Front Lip Texture */}
+            <path d="
+              M 5 85 L 35 85
+              M 45 85 L 95 85
+              M 15 95 L 60 95
+              M 70 95 L 90 95
+            " stroke="#ca8a04" strokeWidth="3" vectorEffect="non-scaling-stroke" strokeLinecap="round" opacity="0.6" />
+          </svg>
+        </div>
 
         {/* === CHARACTER LAYER with AI Image === */}
         <div 
+          onClick={() => setActiveModal("character")}
           className="group absolute bottom-[20%] left-1/2 -translate-x-1/2 w-[40%] h-[60%] z-20 transition-transform duration-300 ease-out hover:scale-105 hover:-rotate-1 cursor-pointer flex flex-col items-center justify-end"
         >
           {/* Tooltip */}
@@ -93,12 +153,13 @@ export function HeroSection() {
         
         {/* Desk Items (Books, Camera, Ink, Coffee) with AI Image */}
         <div 
+          onClick={() => setActiveModal("books")}
           className="group absolute bottom-[5%] left-[5%] w-[35%] h-[35%] z-40 transition-transform duration-300 ease-out hover:scale-105 hover:rotate-2 cursor-pointer"
         >
           {/* Tooltip */}
           <div className="absolute -top-8 left-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 flex flex-col items-center">
             <div className="bg-[#a3e635] px-3 py-1 text-ink font-bold font-mono text-sm -rotate-2 brutal-shadow-sm border-2 border-ink whitespace-nowrap">
-              Inspirations
+              Books I've read
             </div>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a3e635" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="mt-1">
               <path d="M12 2v16M7 13l5 5 5-5"/>
@@ -117,12 +178,13 @@ export function HeroSection() {
 
         {/* Laptop with AI Image */}
         <div 
+          onClick={() => setActiveModal("contacts")}
           className="group absolute bottom-[5%] left-[42%] w-[38%] h-[42%] z-40 transition-transform duration-300 ease-out hover:scale-[1.04] hover:-rotate-1 cursor-pointer"
         >
           {/* Tooltip */}
           <div className="absolute -top-6 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 flex flex-col items-center">
             <div className="bg-[#38bdf8] px-3 py-1 text-ink font-bold font-mono text-sm rotate-2 brutal-shadow-sm border-2 border-ink whitespace-nowrap">
-              My Code Space
+              My Contacts
             </div>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="mt-1">
               <path d="M12 2v16M7 13l5 5 5-5"/>
@@ -141,6 +203,7 @@ export function HeroSection() {
 
         {/* Map */}
         <div 
+          onClick={() => setActiveModal("places-to-go")}
           className="group absolute -bottom-[6%] right-[4%] w-[22%] h-[20%] z-50 transition-transform duration-300 ease-out hover:scale-105 hover:-rotate-2 cursor-pointer rotate-12"
         >
           {/* Tooltip */}
@@ -168,19 +231,24 @@ export function HeroSection() {
             <div className="absolute top-6 left-5 w-4 h-1 border-b-2 border-dashed border-ink -rotate-12" />
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* === BIO SECTION === */}
-      <div className="flex flex-col items-center max-w-4xl px-4 relative z-10 mt-8">
+      <motion.div 
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
+        }}
+        className="flex flex-col items-center max-w-4xl px-4 relative z-10 mt-8"
+      >
          <div className="bg-[#fbf8f1] border-4 border-ink brutal-shadow-lg p-8 md:p-12 -rotate-1 flex flex-col items-center text-center">
            {/* Bio Text */}
            <div>
              <p className="text-lg md:text-xl font-serif leading-relaxed text-ink/75">
                I'm <strong className="font-bold text-xl md:text-2xl text-ink">Kanaka</strong> and I'm the curator of <strong className="font-bold text-ink">kanaka.pages</strong>.<br/>
-               I'm a writer and observer who loves building worlds<br/>
-               and telling stories, both Goan and universal!<br/>
-               I'm a devoted friend (often over-analyzing everything), and almost<br/>
-               everything I own is stained with ink or sand.
+               This space is my digital garden—a chaotic but carefully curated collection<br/>
+               of my ongoing drafts, Goan folklore deep-dives, and personal journal entries.<br/>
+               Click around my desk above to explore the different corners of my mind!
              </p>
            </div>
 
@@ -191,8 +259,13 @@ export function HeroSection() {
              </h2>
            </div>
          </div>
-      </div>
-
-    </section>
+      </motion.div>
+     
+      <NotebookModal 
+        isOpen={!!activeModal} 
+        onClose={() => setActiveModal(null)} 
+        contentId={activeModal as any} 
+      />
+    </motion.section>
   );
 }

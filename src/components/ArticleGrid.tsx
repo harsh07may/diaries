@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import type { Post } from "@/lib/types";
 import { ArticleCard } from "./ArticleCard";
@@ -67,12 +68,12 @@ export function ArticleGrid({ posts }: { posts: Post[] }) {
       </motion.div>
 
       <div className="w-full flex justify-center mt-gap-md">
-        <button
-          type="button"
-          className="bg-surface border-4 border-ink px-8 py-3 font-sans text-headline-md font-bold brutal-shadow brutal-hover brutal-active transition-all cursor-pointer"
+        <Link
+          href="/blogs"
+          className="bg-surface border-4 border-ink px-8 py-3 font-sans text-headline-md font-bold brutal-shadow brutal-hover brutal-active transition-all cursor-pointer inline-block"
         >
           LOAD MORE SH*T
-        </button>
+        </Link>
       </div>
     </section>
   );

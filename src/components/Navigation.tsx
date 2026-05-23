@@ -6,32 +6,41 @@ export async function Navigation() {
   const isAuthenticated = jar.has("keystatic-gh-access-token");
 
   return (
-    <nav className="bg-primary-container w-full border-b-[3px] border-ink shadow-brutal flex justify-between items-center px-margin-page py-4 sticky top-0 z-50">
+    <nav className="bg-white w-full border-b-[6px] border-ink flex justify-between items-center px-4 md:px-12 py-4 sticky top-0 z-50">
       <Link
         href="/"
-        className="font-sans text-headline-lg font-black tracking-tighter text-on-surface hover:scale-95 transition-transform"
+        className="font-mono text-2xl md:text-3xl font-black uppercase tracking-tighter text-ink bg-[#fef08a] px-4 py-1 border-4 border-ink brutal-shadow-sm hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all -rotate-1"
       >
         kanaka.pages
       </Link>
 
-      <div className="hidden md:flex items-center gap-gap-lg">
+      <div className="hidden md:flex items-center gap-10">
         <Link
-          href="/"
-          className="text-on-surface font-bold underline decoration-[3px] font-label-mono text-label-mono hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-100"
+          href="/blogs"
+          className="relative group text-ink font-bold font-mono text-xl uppercase"
         >
-          Latest
+          Blogs
+          <svg className="absolute -bottom-2 left-0 w-full h-2 opacity-0 group-hover:opacity-100 transition-opacity text-red-500" viewBox="0 0 100 20" preserveAspectRatio="none">
+            <path d="M0,10 L10,0 L20,20 L30,0 L40,20 L50,0 L60,20 L70,0 L80,20 L90,0 L100,10" fill="none" stroke="currentColor" strokeWidth="8" vectorEffect="non-scaling-stroke" />
+          </svg>
         </Link>
         <Link
-          href="#"
-          className="text-on-surface-variant font-medium hover:text-on-surface font-mono text-label-mono transition-colors"
+          href="/newsletter"
+          className="relative group text-ink font-bold font-mono text-xl uppercase"
         >
           Newsletter
+          <svg className="absolute -bottom-2 left-0 w-full h-2 opacity-0 group-hover:opacity-100 transition-opacity text-[#ff90e8]" viewBox="0 0 100 20" preserveAspectRatio="none">
+            <path d="M0,10 L10,0 L20,20 L30,0 L40,20 L50,0 L60,20 L70,0 L80,20 L90,0 L100,10" fill="none" stroke="currentColor" strokeWidth="8" vectorEffect="non-scaling-stroke" />
+          </svg>
         </Link>
         <Link
-          href="#"
-          className="text-on-surface-variant font-medium hover:text-on-surface font-mono text-label-mono transition-colors"
+          href="/about"
+          className="relative group text-ink font-bold font-mono text-xl uppercase"
         >
           About
+          <svg className="absolute -bottom-2 left-0 w-full h-2 opacity-0 group-hover:opacity-100 transition-opacity text-[#38bdf8]" viewBox="0 0 100 20" preserveAspectRatio="none">
+            <path d="M0,10 L10,0 L20,20 L30,0 L40,20 L50,0 L60,20 L70,0 L80,20 L90,0 L100,10" fill="none" stroke="currentColor" strokeWidth="8" vectorEffect="non-scaling-stroke" />
+          </svg>
         </Link>
       </div>
 
