@@ -1,6 +1,6 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About",
@@ -33,10 +33,10 @@ export default function AboutPage() {
           {/* Image Section */}
           <div className="w-full md:w-5/12 bg-[#a5f3fc] border-b-8 md:border-b-0 md:border-r-8 border-ink p-8 flex flex-col items-center justify-end relative min-h-[400px]">
              {/* Character Image */}
-             <div className="absolute bottom-0 w-[80%] h-[90%]">
+             <div className="absolute bottom-0 w-[90%] h-[95%]">
                <Image 
-                 src="/hero/kanaka-character.png" 
-                 alt="Kanaka Character" 
+                 src="/kanaka-waving-text.png" 
+                 alt="Kanaka Waving with Text Bubble" 
                  fill
                  className="object-contain object-bottom"
                />
@@ -55,9 +55,6 @@ export default function AboutPage() {
               </p>
               <p>
                 As a writer and keen observer of life, I spend my days building entire worlds out of thin air and telling stories that bridge the gap between local Goan folklore and universal truths.
-              </p>
-              <p>
-                I consider myself a devoted friend—though I'll admit I have a bad habit of over-analyzing everything people say or do. When I'm not furiously typing away at my laptop, you'll probably find me exploring a beach, because almost everything I own is permanently stained with either fountain pen ink or coarse sand.
               </p>
               <p>
                 My ultimate goal is to craft narratives that feel like a warm breeze on a sunny afternoon—bold, refreshing, and entirely unapologetic.

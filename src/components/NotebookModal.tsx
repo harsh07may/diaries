@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
 import { X } from "lucide-react";
 import Image from "next/image";
+import React, { useEffect } from "react";
 
 type ModalContentId =
   | "character"
@@ -43,9 +43,6 @@ export function NotebookModal({ isOpen, onClose, contentId }: NotebookModalProps
             <p className="text-lg md:text-2xl leading-loose mb-6">
               I'm <strong className="font-bold">Kanaka</strong> and I'm the curator of <strong className="font-bold">kanaka.pages</strong>.
               I'm a writer and observer who loves building worlds and telling stories, both Goan and universal!
-            </p>
-            <p className="text-lg md:text-2xl leading-loose">
-              I'm a devoted friend (often over-analyzing everything), and almost everything I own is stained with ink or sand.
             </p>
             <div className="mt-auto pt-8">
               <h2 className="text-5xl text-ink -rotate-2" style={{ fontFamily: "'Brush Script MT', 'Dancing Script', cursive" }}>

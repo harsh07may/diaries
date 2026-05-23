@@ -127,7 +127,7 @@ export function HeroSection() {
         {/* === CHARACTER LAYER with AI Image === */}
         <div 
           onClick={() => setActiveModal("character")}
-          className="group absolute bottom-[20%] left-1/2 -translate-x-1/2 w-[40%] h-[60%] z-20 transition-transform duration-300 ease-out hover:scale-105 hover:-rotate-1 cursor-pointer flex flex-col items-center justify-end"
+          className="group absolute bottom-[2%] left-[52%] -translate-x-1/2 w-[55%] h-[75%] z-20 transition-transform duration-300 ease-out hover:scale-105 hover:-rotate-1 cursor-pointer flex flex-col items-center justify-end"
         >
           {/* Tooltip */}
           <div className="absolute top-[10%] -right-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 flex items-center">
