@@ -1,0 +1,8 @@
+{
+  "contacts": [
+    { "icon": "𝕏", "handle": "@kanaka_pages", "url": "#", "bgColor": "black" },
+    { "icon": "Ig", "handle": "@kanaka.writes", "url": "#", "bgColor": "pink" },
+    { "icon": "In", "handle": "Kanaka Prabhu", "url": "#", "bgColor": "blue" },
+    { "icon": "@", "handle": "hello@kanaka.pages", "url": "#", "bgColor": "yellow" }
+  ]
+}

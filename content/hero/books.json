@@ -1,0 +1,8 @@
+{
+  "books": [
+    { "title": "The God of Small Things", "author": "Arundhati Roy", "color": "yellow" },
+    { "title": "Midnight's Children", "author": "Salman Rushdie", "color": "pink" },
+    { "title": "Sea of Poppies", "author": "Amitav Ghosh", "color": "green" },
+    { "title": "Interpreter of Maladies", "author": "Jhumpa Lahiri", "color": "blue" }
+  ]
+}

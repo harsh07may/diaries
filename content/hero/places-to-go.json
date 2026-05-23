@@ -1,0 +1,9 @@
+{
+  "places": [
+    { "name": "Hampi Ruins", "visited": true },
+    { "name": "Gokarna Beaches", "visited": false },
+    { "name": "Jaipur Palaces", "visited": false },
+    { "name": "Pondicherry Cafes", "visited": false },
+    { "name": "Himalayan Trek", "visited": false }
+  ]
+}
